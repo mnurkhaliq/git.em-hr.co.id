@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="logo.gif" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    @if(get_setting('favicon') != "")
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ get_setting('favicon') }}">
+    @else
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/clients/empore.png') }}">
+    @endif
+    <title>@yield('title')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ asset('admin-css/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="{{ asset('admin-css/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css') }}" rel="stylesheet">
+    <!-- toast CSS -->
+    <link href="{{ asset('admin-css/plugins/bower_components/toast-master/css/jquery.toast.css') }}" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="{{ asset('admin-css/plugins/bower_components/morrisjs/morris.css') }}" rel="stylesheet">
+    <!-- chartist CSS -->
+    <link href="{{ asset('admin-css/plugins/bower_components/chartist-js/dist/chartist.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin-css/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}" rel="stylesheet">
+    <!-- Calendar CSS -->
+    <link href="{{ asset('admin-css/plugins/bower_components/calendar/dist/fullcalendar.css') }}" rel="stylesheet" />
+    <!-- animation CSS -->
+    <link href="{{ asset('admin-css/css/animate.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ asset('admin-css/css/style.css') }}?time=<?=date('His')?>" rel="stylesheet">
+    <link href="{{ asset('admin-css/css/font.css') }}?time=<?=date('His')?>" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="{{ asset('admin-css/css/colors/green.css?v=2') }}" id="theme" rel="stylesheet">
+    
+    <link href="{{ asset('admin-css/plugins/bower_components/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+        table.table tr th, table.table tr td {
+            font-size: 12px;
+        }
+        .navbar-header {
+            background: #eaeaea;
+            border-top: 5px solid red;
+        }
+        .btn-default, .btn-default.disabled {
+            background: #e4e7ea !important;
+            border: 1px solid #e4e7ea !important;
+        }
+        .noteError{
+            border-color: red;
+        }
+        /* .fix-header #page-wrapper {
+            margin-top: 60px !important;
+        } */
+        @if(get_setting('top_header_color') !="")
+            .navbar-header {
+                border-top: 5px solid {{ get_setting('top_header_color')  }};
+            }
+        @else
+            .navbar-header {
+                border-top: 5px solid #ACCE22;
+            }
+        @endif
+
+        @if(get_setting('header_color') !="")
+            .navbar-header {
+                background: {{ get_setting('header_color')  }};
+            }
+        @else
+            .navbar-header {
+                background: #0E9A88;
+            }
+        @endif
+        @if(get_setting('menu_color') != "")
+            #side-menu > li > a.active {
+                background :white;
+                color: {{ get_setting('menu_color')  }};
+                border-bottom : 3px solid  {{ get_setting('menu_color')  }};
+                font-weight: {{ get_setting('header_text_weight')  }};
+            }
+        @else 
+            #side-menu > li > a.active {
+                background :white;
+                color: #0E9A88;
+                border-bottom : 3px solid  #0E9A88;
+            }
+        @endif
+        @if(get_setting('web_font') != "")
+            body, h1, h2, h3, h4, h5, h6{
+                font-family:   {{ get_setting('web_font')  }};
+            }
+        @else
+            body, h1, h2, h3, h4, h5, h6{font-family:unset;}
+        @endif
+
+        @if(get_setting('header_text_color') != "")
+            #side-menu > li > a {
+                color: {{ get_setting('header_text_color')  }};
+                border-bottom: 3px solid transparent;
+            }
+
+            .footer {
+                color: {{ get_setting('header_text_color')  }};
+            }
+        @else 
+            #side-menu > li > a {
+                color: black;
+                border-bottom: 3px solid transparent;
+            }
+
+            .footer {
+                color: black;
+            }
+        @endif
+
+        @if(get_setting('header_text_weight') != "")
+            #side-menu > li > a {
+                font-weight: {{ get_setting('header_text_weight')  }};
+            }
+
+            .footer {
+                font-weight: {{ get_setting('header_text_weight')  }};
+            }
+        @endif
+        @if(get_setting('table_color') != "")
+            tbody td {
+                color: {{ get_setting('table_color')  }};
+            }
+            tbody td div, tbody td span {
+                color: #797979;
+            }
+        @else
+            tbody td {
+                color: black;
+            }
+        @endif
+        @if(get_setting('table_weight') != "")
+            tbody td {
+                font-weight: {{ get_setting('table_weight')  }};
+            }
+            tbody td div, tbody td span {
+                font-weight: 300;
+            }
+        @endif
+        table.floatThead-table {
+            border-top: none;
+            border-bottom: none;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body class="fix-header">
+
+     <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <a class="logo" href="{{ route('karyawan.dashboard') }}">
+                        @if(get_setting('logo') != "")
+                        <span class="hidden-xs">
+                            <img src="{{ asset(get_setting('logo')) }}" style="height: 40px;" class="light-logo">
+                        </span>
+                        @endif
+                    </a>
+                </div>
+                <!-- /Logo -->
+                <!-- Search input and Toggle icon -->
+                <ul class="nav navbar-top-links navbar-left">
+                    <li><a href="javascript:void(0)" class="open-close waves-effect waves-light visible-xs"><i class="ti-close ti-menu"></i></a></li>
+                    <!-- .Megamenu -->
+                </ul>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="javascript:void(0)">
+                            @if(!empty(\Auth::user()->foto))
+                                <img src="{{ asset('storage/foto/'. \Auth::user()->foto) }}" alt="user-img" width="36" class="img-circle" />
+                            @elseif(empty(\Auth::user()->foto) && \Auth::user()->jenis_kelamin == 'Female')
+                                <img src="{{ asset('images/Birthday_Female_Icon.png') }}" style="width: 36px;" class="img-circle">
+                            @elseif(empty(\Auth::user()->foto) && \Auth::user()->jenis_kelamin == 'Male')
+                                <img src="{{ asset('images/Birthday_Male_Icon.png') }}" style="width: 36px;" class="img-circle">
+                            @else
+                                <img src="{{ asset('admin-css/images/user.png') }}" alt="user-img" width="36" class="img-circle" />
+                            @endif
+                            <b style="color:black;" class="hidden-xs">{{ Auth::user()->name }}</b><span class="caret"></span> </a>
+                        <ul class="dropdown-menu dropdown-user animated flipInY">
+                            <li>
+                                <div class="dw-user-box">
+                                    <div class="u-img">
+                                        @if(!empty(\Auth::user()->foto))
+                                            <img src="{{ asset('storage/foto/'. \Auth::user()->foto) }}" alt="user-img" width="36" class="img-circle" />
+                                        @elseif(empty(\Auth::user()->foto) && \Auth::user()->jenis_kelamin == 'Female')
+                                            <img src="{{ asset('images/Birthday_Female_Icon.png') }}" style="width: 50px;" class="img-circle">
+                                        @elseif(empty(\Auth::user()->foto) && \Auth::user()->jenis_kelamin == 'Male')
+                                            <img src="{{ asset('images/Birthday_Male_Icon.png') }}" style="width: 50px;" class="img-circle">
+                                        @else
+                                        <img src="{{ asset('admin-css/images/user.png') }}" alt="user-img" width="36" class="img-circle" />
+                                        @endif
+                                    </div>
+                                    <div class="u-text">
+                                        <h4 style="color:black;">{{ Auth::user()->name }}</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a style="font-size: 12px;"><i class="fa fa-star"></i> {{ isset(Auth::user()->structure->position) ? Auth::user()->structure->position->name:''}}{{ isset(Auth::user()->structure->division) ? ' - '. Auth::user()->structure->division->name:''}}{{ isset(Auth::user()->structure->title) ? ' - '. Auth::user()->structure->title->name:'' }}</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            @if(\Session::get('is_login_administrator'))
+                                <li>
+                                    <a href="{{ route('karyawan.back-to-administrator') }}"> <i class="fa fa-key"></i> Back to Administrator</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                            @endif
+                            @if(Auth::user()->access_id == 1 && !\Session::get('is_login_administrator'))
+                                <li>
+                                    <a href="{{ route('karyawan.switch-to-administrator') }}"> <i class="fa fa-key"></i> Switch to Administrator</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                            @endif
+                            <li>
+                                <a href="{{ route('karyawan.profile') }}">Profile</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
+                @include('layouts.nav') 
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        
+        @yield('content')
+
+    <!-- sample modal content -->
+    <div id="modal_history_approval" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">History Approval</h4> </div>
+                    <div class="modal-body" id="modal_content_history_approval"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <script type="text/javascript">
+        
+        function status_approval_exit(id)
+        {
+            $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-exit') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+
+                    var el = "";
+                    if(data.data.jenis_karyawan == 'staff')
+                    {
+                        el = '<div class="panel-body">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+
+                        if(data.data.is_approved_atasan == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.is_approved_atasan == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.is_approved_atasan === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                        }
+
+                        el += '<div class="sl-right">'+
+                                            '<div><strong>Manager</strong> <br /><a href="#">'+ data.data.atasan_name +'</a> </div>'+
+                                            '<div class="desc">'+ (data.data.date_approved_atasan != null ? data.data.date_approved_atasan : '' ) +'<p>'+ (data.data.catatan_atasan != null ? data.data.catatan_atasan : '' )  +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    }
+
+                    el += '<div class="panel-body">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+
+                    if(data.data.approve_direktur == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(data.data.approve_direktur == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(data.data.approve_direktur === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                    }
+
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>Direktur</strong><br><a href="#">'+ data.data.direktur_name +'</a> </div>'+
+                                        '<div class="desc">'+ (data.data.approve_direktur_date != null ? data.data.approve_direktur_date : '' )  +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                        
+                        
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function status_approval_actual_bill(id)
+        {
+            $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-training-bill') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+
+                    var el = "";
+                    if(data.data.jenis_karyawan == 'staff')
+                    {
+                        el = '<div class="panel-body">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+
+                        if(data.data.is_approve_atasan_actual_bill == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.is_approve_atasan_actual_bill == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.is_approve_atasan_actual_bill === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                        }
+
+                        el +='<div class="sl-right">'+
+                                            '<div><strong>Manager</strong> <br /><a href="#">'+ data.data.atasan +'</a> </div>'+
+                                            '<div class="desc">'+ (data.data.date_approved_atasan != null ? data.data.date_approved_atasan : '' ) +'<p>'+ (data.data.catatan_atasan != null ? data.data.catatan_atasan : '' )  +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    }
+
+                    el += '<div class="panel-body">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+
+                        if(data.data.approve_direktur_actual_bill == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.approve_direktur_actual_bill == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.approve_direktur_actual_bill === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                        }
+
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>Direktur</strong><br><a href="#">'+ data.data.direktur +'</a> </div>'+
+                                        '<div class="desc">'+ (data.data.approve_direktur_actual_bill_date !== null ?  data.data.approve_direktur_actual_bill_date : '' ) +'</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                        
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function status_approval_training(id)
+        {
+            $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-training') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+
+                    var el = "";
+                    if(data.data.jenis_karyawan == 'staff')
+                    {
+                        el = '<div class="panel-body">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+ 
+                        if(data.data.is_approved_atasan == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.is_approved_atasan == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.is_approved_atasan === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                        }
+
+                        el +='<div class="sl-right">'+
+                                            '<div><strong>Manager</strong> <br /><a href="#">'+ data.data.atasan +'</a> </div>'+
+                                            '<div class="desc">'+ (data.data.date_approved_atasan != null ? data.data.date_approved_atasan : '' ) +'<p>'+ (data.data.catatan_atasan != null ? data.data.catatan_atasan : '' )  +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    }
+
+                    el += '<div class="panel-body">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+
+                        if(data.data.approve_direktur == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.approve_direktur == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.approve_direktur === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                        }
+
+                        el += '<div class="sl-right">'+
+                                        '<div><strong>Direktur</strong><br><a href="#">'+ data.data.direktur +'</a> </div>'+
+                                        '<div class="desc">'+ (data.data.approve_direktur_date !== null ?  data.data.approve_direktur_date : '' ) +'</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                        
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function status_approval_payment_request(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-payment-request') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+
+                    var el = "";
+                    if(data.data.jenis_karyawan == 'staff')
+                    {
+                        el = '<div class="panel-body">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+
+                    if(data.data.is_approved_atasan == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(data.data.is_approved_atasan == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(data.data.is_approved_atasan === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                    }
+                    
+                    el += '<div class="sl-right">'+
+                                            '<div><strong>Manager</strong> <br /><a href="#">'+ data.data.atasan_name +'</a> </div>'+
+                                            '<div class="desc">'+ (data.data.date_approved_atasan !== null ? data.data.date_approved_atasan : '' ) +'<p>'+ (data.data.catatan_atasan != null ? data.data.catatan_atasan : '' )  +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    }
+
+                    el += '<div class="panel-body">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+
+                    if(data.data.approve_direktur == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(data.data.approve_direktur == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(data.data.approve_direktur === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                    }
+                    
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>Direktur</strong><br><a href="#">'+ data.data.direktur_name +'</a> </div>'+
+                                        '<div class="desc">'+ (data.data.approve_direktur_date !== null ?  data.data.approve_direktur_date : '' ) +'</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function status_approval_overtime(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-overtime') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+
+                    var el = "";
+                    if(data.data.jenis_karyawan == 'staff')
+                    {
+                        el = '<div class="panel-body">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+
+                        if(data.data.is_approved_atasan == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.is_approved_atasan == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.is_approved_atasan === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                        }
+                        
+                        el += '<div class="sl-right">'+
+                                            '<div><strong>Manager</strong> <br /><a href="#">'+ data.data.atasan_name +'</a> </div>'+
+                                            '<div class="desc">'+ (data.data.date_approved_atasan != null ? data.data.date_approved_atasan : '' ) +'<p>'+ (data.data.catatan_atasan != null ? data.data.catatan_atasan : '' )  +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    }
+
+                    el += '<div class="panel-body">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+
+                    if(data.data.approve_direktur == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(data.data.approve_direktur == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(data.data.approve_direktur === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                    }
+
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>Direktur</strong><br><a href="#">'+ data.data.direktur_name +'</a> </div>'+
+                                        '<div class="desc">'+ (data.data.approve_direktur_date !== null ?  data.data.approve_direktur_date : '' ) +'</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+
+
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function status_approval_medical(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-medical') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+
+                    var el = "";
+                    if(data.data.jenis_karyawan == 'staff')
+                    {
+                        el = '<div class="panel-body">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+
+                                    if(data.data.is_approved_atasan == 1)
+                                    {
+                                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                                    }
+                                    else if(data.data.is_approved_atasan == 0)
+                                    {
+                                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                                    }
+                                    else if(data.data.is_approved_atasan === null)
+                                    {
+                                        el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                                    }
+
+                                    el += '<div class="sl-right">'+
+                                            '<div><strong>Manager</strong> <br /><a href="#">'+ data.data.atasan_name +'</a> </div>'+
+                                            '<div class="desc">'+ (data.data.date_approved_atasan != null ? data.data.date_approved_atasan : '' ) +'<p>'+ (data.data.catatan_atasan != null ? data.data.catatan_atasan : '' )  +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    }
+
+                    el += '<div class="panel-body">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+
+                        if(data.data.approve_direktur == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.approve_direktur == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.approve_direktur === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                        }
+
+                        el += '<div class="sl-right">'+
+                                        '<div><strong>Direktur</strong><br><a href="#">'+ data.data.direktur_name +'</a> </div>'+
+                                        '<div class="desc">'+ (data.data.approve_direktur_date !== null ?  data.data.approve_direktur_date : '' ) +'</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_cuti(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-cuti') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+
+                    var el = "";
+                    if(data.data.jenis_karyawan == 'staff')
+                    {
+                        el = '<div class="panel-body">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+
+                        if(data.data.is_approved_atasan == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.is_approved_atasan == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.is_approved_atasan === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                        }
+                        
+                        el += '<div class="sl-right">'+
+                                            '<div><strong>Manager</strong> <br /><a href="#">'+ data.data.atasan +'</a> </div>'+
+                                            '<div class="desc">'+ (data.data.date_approved_atasan != null ? data.data.date_approved_atasan : '' ) +'<p>'+ (data.data.catatan_atasan != null ? data.data.catatan_atasan : '' )  +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    }
+
+                    el += '<div class="panel-body">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+
+                    if(data.data.approve_direktur == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(data.data.approve_direktur == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(data.data.approve_direktur === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-history"></i></div>';
+                    }
+                                    
+
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>Direktur</strong><br><a href="#">'+ data.data.direktur +'</a> </div>'+
+                                        '<div class="desc">'+ (data.data.approve_direktur_date !== null ?  data.data.approve_direktur_date : '' ) +'<p>'+ (data.data.approve_direktur_noted != null ? data.data.approve_direktur_noted : '' )  +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+        function detail_approval_leaveCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-leave-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+(value.is_withdrawal == 1 ? 'Withdrawal ' : '')+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }  
+        function detail_approval_paymentRequestCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-payment-request-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }  
+
+        function detail_approval_cashAdvance(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-cash-advance') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }  
+
+        function detail_approval_cashAdvanceClaim(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-cash-advance-claim') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_timesheetCustom(id, is_approvable = true)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-timesheet-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    } else {
+                        el += '<div>'+value.user+'<br></div>'+
+                            '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>';
+                    }
+                    el += '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_overtimeCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-overtime-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+
+                    
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_overtimeClaimCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-overtime-claim-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_trainingCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-training-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }            
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_trainingClaimCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-training-claim-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+
+                        
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_medicalCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-medical-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_loanCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-loan-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    
+                    if (data.data.asset.length) {
+                        el += '<div class="panel-body" style="padding: 0 15px;">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+                        if(data.data.approval_collateral_receipt_status == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.approval_collateral_receipt_status == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.approval_collateral_receipt_status === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                        }
+                        el += '<div class="sl-right">'+
+                                            '<div><strong>Collateral Photo Check</strong><br><a href="#">HR</a> </div>';
+                        if(data.data.approval_collateral_receipt_status === null)
+                        {
+                            $.each(data.admin, function(k,v){
+                                el +='<p>'+v.name+'</p>';
+                            });
+                        }      
+                        el += '<div>'+(data.data.receipt_approver ? data.data.receipt_approver.name : '')+'<br></div>'+
+                                            '<div class="desc">'+ (data.data.approval_collateral_receipt_date != null ? data.data.approval_collateral_receipt_date : '' ) +'<p>'+ (data.data.approval_collateral_receipt_note != null ? data.data.approval_collateral_receipt_note : '') +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+
+                        el += '<div class="panel-body" style="padding: 0 15px;">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+                        if(data.data.approval_collateral_physical_status == 1)
+                        {
+                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                        }
+                        else if(data.data.approval_collateral_physical_status == 0)
+                        {
+                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                        }
+                        else if(data.data.approval_collateral_physical_status === null)
+                        {
+                            el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                        }
+                        el += '<div class="sl-right">'+
+                                            '<div><strong>Collateral Physical Check</strong><br><a href="#">HR</a> </div>';
+                        if(data.data.approval_collateral_physical_status === null)
+                        {
+                            $.each(data.admin, function(k,v){
+                                el +='<p>'+v.name+'</p>';
+                            });
+                        }      
+                        el += '<div>'+(data.data.physical_approver ? data.data.physical_approver.name : '')+'<br></div>'+
+                                            '<div class="desc">'+ (data.data.approval_collateral_physical_date != null ? data.data.approval_collateral_physical_date : '' ) +'<p>'+ (data.data.approval_collateral_physical_note != null ? data.data.approval_collateral_physical_note : '') +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    }
+
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(data.data.approval_loan_status == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(data.data.approval_loan_status == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(data.data.approval_loan_status === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>Loan</strong><br><a href="#">HR</a> </div>';
+                    if(data.data.approval_loan_status === null)
+                    {
+                        $.each(data.admin, function(k,v){
+                            el +='<p>'+v.name+'</p>';
+                        });
+                    }      
+                    el += '<div>'+(data.data.loan_approver ? data.data.loan_approver.name : '')+'<br></div>'+
+                                        '<div class="desc">'+ (data.data.approval_loan_date != null ? data.data.approval_loan_date : '' ) +'<p>'+ (data.data.approval_loan_note != null ? data.data.approval_loan_note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_exitCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-exit-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_clearanceCustom(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-clearance-custom') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+
+                    $.each(data.history, function(key,value){
+                    el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                    if(value.is_approved == 1)
+                    {
+                        el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                    }
+                    else if(value.is_approved == 0)
+                    {
+                        el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                    }
+                    else if(value.is_approved === null)
+                    {
+                        el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                    }
+                    el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                    if(value.is_approved === null)
+                    {
+                        $.each(data.user, function(k,v){
+                            if(k==key){
+                                $.each(v.child, function(s,t){
+                                el +='<p>'+t.name+'</p>';
+                            }); 
+                            }
+                        });
+                    }
+                    el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    });
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+            $("#modal_history_approval").modal('show');
+        }
+
+        function detail_approval_facilities(id)
+        {
+             $.ajax({
+                type: 'POST',
+                url: '{{ route('ajax.get-history-approval-facilities') }}',
+                data: {'foreign_id' : id ,'_token' : $("meta[name='csrf-token']").attr('content')},
+                dataType: 'json',
+                success: function (data) {
+                    var el = "";
+                    if(data.history.length > 0){
+                        $.each(data.history, function(key,value){
+                            el += '<div class="panel-body" style="padding: 0 15px;">'+
+                                '<div class="steamline">'+
+                                    '<div class="sl-item">';
+                                        if(value.is_approved == 1)
+                                        {
+                                            el += '<div class="sl-left bg-success"> <i class="fa fa-check"></i></div>';
+                                        }
+                                        else if(value.is_approved == 0)
+                                        {
+                                            el += '<div class="sl-left bg-danger" title="Denied"> <i class="fa fa-close"></i></div>';
+                                        }
+                                        else if(value.is_approved === null)
+                                        {
+                                            el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div>';
+                                        }
+                                        el += '<div class="sl-right">'+
+                                        '<div><strong>'+value.level+'</strong><br><a href="#">'+ value.position +'</a> </div>';
+                                        if(value.is_approved === null)
+                                        {
+                                            $.each(data.user, function(k,v){
+                                                if(k==key){
+                                                    $.each(v.child, function(s,t){
+                                                        el +='<p>'+t.name+'</p>';
+                                                    }); 
+                                                }
+                                            });
+                                        }
+                                        el += '<div>'+value.user+'<br></div>'+
+                                        '<div class="desc">'+ (value.date != null ? value.date : '' ) +'<p>'+ (value.note != null ? value.note : '') +'</p></div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                        });
+                    }
+                    else if(data.user.length>0){
+                        el += '<div class="panel-body" style="padding: 0 15px;">'+
+                            '<div class="steamline">'+
+                                '<div class="sl-item">';
+                                    el += '<div class="sl-left bg-warning"> <i class="fa fa-info"></i></div><div class="sl-right">';
+                                        $.each(data.user[0].child, function(k,v){
+                                            el +='<div>'+v.name+'<br></div>';
+                                        });
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
+                    }
+
+                   
+                    $("#modal_content_history_approval").html(el);
+                }
+            });
+            $("#modal_history_approval").modal('show');
+        }
+
+    </script>
+
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{{ asset('admin-css/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('admin-css/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="{{ asset('admin-css/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js') }}"></script>
+    <!--slimscroll JavaScript -->
+    <script src="{{ asset('admin-css/js/jquery.slimscroll.js') }}"></script>
+    <!--Wave Effects -->
+    <script src="{{ asset('admin-css/js/waves.js') }}"></script>
+    <!--Counter js -->
+    <script src="{{ asset('admin-css/plugins/bower_components/waypoints/lib/jquery.waypoints.js') }}"></script>
+    <script src="{{ asset('admin-css/plugins/bower_components/counterup/jquery.counterup.min.js') }}"></script>
+    <!--Morris JavaScript -->
+    <script src="{{ asset('admin-css/plugins/bower_components/raphael/raphael-min.js') }}"></script>
+    <script src="{{ asset('admin-css/plugins/bower_components/morrisjs/morris.js') }}"></script>
+    <!-- chartist chart -->
+    <script src="{{ asset('admin-css/plugins/bower_components/chartist-js/dist/chartist.min.js') }}"></script>
+    <script src="{{ asset('admin-css/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
+    <!-- Calendar JavaScript -->
+    <script src="{{ asset('admin-css/plugins/bower_components/moment/moment.js') }}"></script>
+    <script src="{{ asset('admin-css/plugins/bower_components/calendar/dist/fullcalendar.min.js') }}"></script>
+    <script src="{{ asset('admin-css/plugins/bower_components/calendar/dist/cal-init.js') }}"></script>
+    <script src="{{ asset('admin-css/plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
+    <script src="{{ asset('js/jquery.priceformat.min.js') }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ asset('admin-css/js/custom.js') }}"></script>
+    <script src="{{ asset('admin-css/js/dashboard1.js') }}?time=<?=date('His')?>"></script>
+    <!-- Custom tab JavaScript -->
+    <script src="{{ asset('admin-css/js/cbpFWTabs.js') }}"></script>
+    <script src="{{ asset('js/bootbox.min.js') }}"></script>
+    <!-- start - This is for export functionality only -->
+    <script src="{{ asset('admin-css/plugins/bower_components/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/fh-3.2.4/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/fh-3.2.4/datatables.min.js"></script>
+    <link href="https://cdn.datatables.net/fixedcolumns/4.1.0/css/fixedColumns.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/4.1.0/js/dataTables.fixedColumns.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('admin-css/plugins/bower_components/jquery-ui/jquery-ui.css') }}">
+    <script src="{{ asset('admin-css/plugins/bower_components/jquery-ui/jquery-ui.js') }}"></script>
+    <script src="{{ asset('js/general.js?v='. date('His')) }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.2.3/jquery.floatThead.min.js"></script>
+
+    @if(Auth::user()->is_reset_first_password === null)
+        <div class="modal fade" id="modal_reset_password" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <form>
+                    
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel1">Reset Your Password First !</h4> 
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Password:</label>
+                            <input type="password" name="password"class="form-control" placeholder="Password"> 
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Confirm Password:</label>
+                            <input type="password" name="confirm"class="form-control" placeholder="Confirm Password"> 
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" id="submit_password">Submit Password <i class="fa fa-arrow-right"></i></button>
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div> 
+        <script type="text/javascript">
+
+            $("#submit_password").click(function(){
+
+                var password    = $("input[name='password']").val();
+                var confirm     = $("input[name='confirm']").val();
+
+                if(password == "" || confirm == "")
+                {
+                    bootbox.alert('Password or Confirm Password can not be Empty !');
+                    return false;
+                }
+
+                if(password != confirm)
+                {
+                    bootbox.alert('Password does not Match');
+                }
+                else
+                {
+                     $.ajax({
+                        type: 'POST',
+                        url: '{{ route('ajax.update-first-password') }}',
+                        data: {'id' : {{ Auth::user()->id }}, 'password' : password, '_token' : $("meta[name='csrf-token']").attr('content')},
+                        dataType: 'json',
+                        success: function (data) {
+                            if(data.message == 'error')
+                            {
+                                alert(data.data);
+                            }
+                            else
+                            {
+                                location.reload();
+                            }
+                        }
+                    });
+                }
+            });
+
+            $("#modal_reset_password").modal({
+                backdrop: 'static',
+                keyboard: false  // to prevent closing with Esc button (if you want this too)
+            });
+        </script>
+    @endif
+
+    <script type="text/javascript"> 
+        $(".myadmin-alert .closed").click(function(event) {
+            $(this).parents(".myadmin-alert").fadeToggle(350);
+            return false;
+        });
+        $(document).ready(function(){
+            $( document ).on( 'focus', ':input', function(){
+                $( this ).attr( 'autocomplete', 'off' );
+            });
+        });
+    </script>
+
+    <script>
+        function alertNote(){
+            bootbox.alert({
+                message: "Note Approval can't be empty. Please fill the note!",
+                size: 'small'
+            });
+        }
+    </script>
+    <script> 
+    $(document).ready(function(){
+        $(".sticky-header").floatThead({position: 'absolute'});
+        $(".sticky-header").css("border-collapse", "collapse");
+        $(".floatThead-container").css("will-change", "auto");
+    });
+    </script>
+
+    @yield('js')
+
+    @yield('footer-script')
+    @include('layouts.alert')
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    {{ csrf_field() }}
+</form>
+</body>
+</html>

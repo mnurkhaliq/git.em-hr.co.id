@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateUserCertificationTempTable extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('user_certification_temp', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->integer('user_temp_id');
+			$table->integer('index');
+			$table->string('name', 200)->nullable();
+			$table->date('date')->nullable();
+			$table->string('organizer', 200)->nullable();
+			$table->string('certificate_number', 200)->nullable();
+			$table->string('score', 200)->nullable();
+			$table->text('description', 65535)->nullable();
+			$table->timestamps();
+		});
+	}
+
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('user_certification_temp');
+	}
+
+}

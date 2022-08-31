@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AddMasterVisitCategoryIdToUsersTemp extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('users_temp', function (Blueprint $table) {
+            if (Schema::hasColumn('users_temp','master_category_visit_id'))
+            {
+                Schema::table('users_temp', function (Blueprint $table)
+                {
+                    $table->dropColumn('master_category_visit_id');
+               
+                });
+                Schema::table('users_temp', function (Blueprint $table)
+                {
+                    $table->unsignedInteger('master_category_visit_id')->nullable()->after('shift_id'); 
+                });
+            }
+            else
+            {
+                Schema::table('users_temp', function (Blueprint $table) {
+                    $table->unsignedInteger('master_category_visit_id')->nullable()->after('shift_id'); 
+                });
+            }
+            
+        }); 
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('users_temp', function (Blueprint $table) {
+            //
+        });
+    }
+}

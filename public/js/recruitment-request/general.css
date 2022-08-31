@@ -1,0 +1,92 @@
+.table-history {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    border-bottom: 1px solid #c4c4c4;
+    padding-bottom: 8px;
+}
+.table-status {
+    border-collapse: separate;
+    border-spacing: 0 0.5em;
+}
+
+.table-detail-apply {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+.dot-waiting {
+    height: 16px;
+    width: 16px;
+    background-color: #F5E021;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-rejected {
+    height: 16px;
+    width: 16px;
+    background-color: #FF2001;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-approved {
+    height: 16px;
+    width: 16px;
+    background-color: #71ED45;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-shortlisted {
+    height: 16px;
+    width: 16px;
+    background-color: #B0B0B0;
+    border-radius: 50%;
+    display: inline-block;
+}
+.vl {
+    border-left: 0.5px solid #C4C4C4;
+    height: 100%;
+}
+.hl {
+    border-left: 0.5px solid #C4C4C4;
+    width: 100px;
+}
+.centerize{
+    display:inline-block;
+    vertical-align:middle;
+}
+
+
+#histories{
+    margin: 16px 0 16px 0;
+}
+td, th {
+    vertical-align:top;
+    /*color : black;*/
+}
+
+.status-detail {
+    display: inline-block;
+    position: relative;
+    padding-left: 0.3em;
+    margin-left: 22px;
+    padding-left: 7%;
+}
+
+.status-detail::before {
+    content: '';
+    border-left: 1px solid #c4c4c4;
+    position: absolute;
+    height: 90%;
+    left: 0;
+    top: 5%;
+
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    max-height: 600px;
+    overflow-y: auto;
+}

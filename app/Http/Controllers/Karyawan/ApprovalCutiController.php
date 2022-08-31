@@ -1,0 +1,154 @@
+<?php
+
+namespace App\Http\Controllers\Karyawan;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\CutiKaryawan;
+use App\Models\StatusApproval;
+use App\Models\UserCuti;
+use App\Models\Cuti;
+
+class ApprovalCutiController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $params['data'] = CutiKaryawan::where('approve_direktur_id', \Auth::user()->id)->where('is_approved_atasan',1)
+                                                ->orderBy('id', 'DESC')
+                                                ->get();
+
+        return view('karyawan.approval-cuti.index')->with($params);
+    }
+
+    /**
+     * [proses description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    public function proses(Request $request)
+    {
+        $status = new StatusApproval;
+        $status->approval_user_id       = \Auth::user()->id;
+        $status->jenis_form             = 'cuti';
+        $status->foreign_id             = $request->id;
+        $status->status                 = $request->status;
+        $status->noted                  = $request->noted;
+        $status->save();    
+
+        $cuti = CutiKaryawan::where('id', $request->id)->first();
+        $cuti->approve_direktur         = $request->status;
+        $cuti->approve_direktur_noted   = $request->noted;
+        $cuti->approve_direktur_date    = date('Y-m-d H:i:s');
+        
+        $params['data']     = $cuti;
+
+        if($request->status == 0)
+        {
+            $status = 3;
+            
+            $params['atasan']   = $cuti->atasan;
+            $params['text']     = '<p><strong>Dear Sir/Madam '. $cuti->user->name .'</strong>,</p> <p>  Submission of your Leave / Permit <strong style="color: red;">REJECTED</strong>.</p>';
+            // send email
+            try {
+                \Mail::send('email.cuti-approval', $params,
+                    function ($message) use ($cuti) {
+                        $message->to($cuti->karyawan->email);
+                        $message->subject('Empore - Submission of Leave / Permit');
+                    }
+                );
+            }catch (\Swift_TransportException $e){
+                return redirect()->back()->with('message-error', 'Email config is invalid!');
+            }
+        }else{
+            $status = 2;
+
+            $params['text']     = '<p><strong>Dear Sir/Madam '. $cuti->user->name .'</strong>,</p> <p>  Submission of your Leave / Permit <strong style="color: green;">APPROVED</strong>.</p>';
+            // send email
+            try {
+                \Mail::send('email.cuti-approval', $params,
+                    function ($message) use ($cuti) {
+                        $message->to($cuti->karyawan->email);
+                        $message->subject('Empore - Submission of Leave / Permit');
+                    }
+                );
+            }catch (\Swift_TransportException $e){
+                return redirect()->back()->with('message-error', 'Email config is invalid!');
+            }
+
+            $user_cuti = UserCuti::where('user_id', $cuti->user_id)->where('cuti_id', $cuti->jenis_cuti)->first();
+
+            if(empty($user_cuti))
+            {
+                $temp = Cuti::where('id', $cuti->jenis_cuti)->first();
+
+                if($temp)
+                { 
+                    $user_cuti                  = new UserCuti();
+                  
+                    $user_cuti->user_id         = $cuti->user_id;
+                    $user_cuti->cuti_id         = $cuti->jenis_cuti;
+                    $user_cuti->kuota           = $temp->kuota;
+                    if ($temp->jenis_cuti=='Permit')
+                    {
+                        $user_cuti->cuti_terpakai   = null;
+                        $user_cuti->sisa_cuti       = null;
+                    }
+                    else
+                    {
+                        $user_cuti->cuti_terpakai   = $cuti->total_cuti;
+                        $user_cuti->sisa_cuti       = $temp->kuota - $cuti->total_cuti;
+                    }
+                  
+                    $user_cuti->save();
+                }
+            }
+            else
+            {
+               // jika cuti maka kurangi kuota
+                if(strpos($user_cuti->cuti->jenis_cuti, 'Cuti') !== false)
+                {
+                    // kurangi cuti tahunan user jika sudah di approved
+                    $user_cuti->cuti_terpakai   = $user_cuti->cuti_terpakai + $cuti->total_cuti;
+                    $user_cuti->sisa_cuti       = $user_cuti->kuota - $user_cuti->cuti_terpakai;
+                    $user_cuti->save();
+                }
+            }
+            $cuti->temp_sisa_cuti           = $cuti->temp_sisa_cuti - $cuti->total_cuti;
+            $cuti->temp_cuti_terpakai       = $cuti->total_cuti + $cuti->temp_cuti_terpakai;
+        }
+
+        $cuti->status = $status;
+        $cuti->is_personalia_id = \Auth::user()->id;
+        $cuti->save();
+
+        return redirect()->route('karyawan.approval.cuti.index')->with('messages-success', 'Leave Form Successfully processed !');
+    }
+
+    /**
+     * [detail description]
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function detail($id)
+    {   
+        $params['data'] = CutiKaryawan::where('id', $id)->first();
+
+        return view('karyawan.approval-cuti.detail')->with($params);
+    }
+}

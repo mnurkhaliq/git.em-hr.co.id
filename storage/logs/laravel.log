@@ -1,0 +1,374 @@
+[2021-09-14 12:25:17] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:25:17] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:25:32] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:25:32] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:25:48] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:25:48] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:26:16] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Class 'Maatwebs...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:26:16] laravel.ERROR: Class 'Maatwebsite\Excel\Excel' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Maatwebsite\\Excel\\Excel' not found at D:\\Office\\REPO\\saas-emhr\\config\\excel.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:26:58] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:26:58] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:28:17] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:28:17] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:29:40] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:29:40] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:30:32] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:30:32] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:30:49] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:30:49] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:30:55] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:30:55] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:49:59] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:49:59] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:50:15] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Class 'Maatwebs...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:50:15] laravel.ERROR: Class 'Maatwebsite\Excel\Excel' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Maatwebsite\\Excel\\Excel' not found at D:\\Office\\REPO\\saas-emhr\\config\\excel.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:54:17] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:54:17] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:56:21] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:56:21] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:56:46] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:56:46] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 12:59:34] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 12:59:34] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-09-14 13:01:08] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:175)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(109): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(97): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(507): Illuminate\\Log\\LogManager->driver()
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(118): Illuminate\\Log\\LogManager->error('Call to undefin...', Array)
+#4 D:\\Office\\REPO\\saas-emhr\\app\\Exceptions\\Handler.php(49): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#5 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(376): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#6 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(141): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError))
+#7 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-09-14 13:01:08] laravel.ERROR: Call to undefined function str_slug() {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined function str_slug() at D:\\Office\\REPO\\saas-emhr\\config\\cache.php:91)
+[stacktrace]
+#0 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(72): require()
+#1 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#2 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(211): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#3 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#4 D:\\Office\\REPO\\saas-emhr\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#5 D:\\Office\\REPO\\saas-emhr\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 

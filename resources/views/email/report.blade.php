@@ -1,0 +1,71 @@
+<html>
+<body>
+    <p>We have received a new report from user!</p>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>:</td>
+            <td>{{$user}}</td>
+        </tr>
+        @if($optional_email)
+        <tr>
+            <td>Email</td>
+            <td>:</td>
+            <td>{{$optional_email}}</td>
+        </tr>
+        @endif
+        @if($phone_number)
+            <tr>
+                <td>Phone Number</td>
+                <td>:</td>
+                <td>{{$phone_number}}</td>
+            </tr>
+        @endif
+        @if($platform)
+            <tr>
+                <td>Platform</td>
+                <td>:</td>
+                <td>{{$platform}}</td>
+            </tr>
+        @endif
+        @if($app_version)
+            <tr>
+                <td>App Version</td>
+                <td>:</td>
+                <td>{{$app_version}}</td>
+            </tr>
+        @endif
+        @if($os_version)
+            <tr>
+                <td>OS Version</td>
+                <td>:</td>
+                <td>{{$os_version}}</td>
+            </tr>
+        @endif
+        @if($device_name)
+            <tr>
+                <td>Device Name</td>
+                <td>:</td>
+                <td>{{$device_name}}</td>
+            </tr>
+        @endif
+        @if($company)
+        <tr>
+            <td>Company</td>
+            <td>:</td>
+            <td>{{$company}}</td>
+        </tr>
+        @endif
+        <tr>
+            <td>Report Type</td>
+            <td>:</td>
+            <td>{{$type}}</td>
+        </tr>
+        <tr>
+            <td>Desc</td>
+            <td>:</td>
+            <td>{{$desc}}</td>
+        </tr>
+    </table>
+</body>
+</html>

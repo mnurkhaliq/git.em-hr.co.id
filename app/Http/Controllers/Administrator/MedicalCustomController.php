@@ -1,0 +1,292 @@
+<?php
+
+namespace App\Http\Controllers\Administrator;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\MedicalReimbursement;
+use App\Models\MedicalReimbursementForm;
+use App\User;
+use App\Models\StructureOrganizationCustom; 
+use App\Models\OrganisasiDivision;
+use App\Models\OrganisasiPosition;
+use App\Models\MedicalPlafond;
+
+
+class MedicalCustomController extends Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->middleware('auth');
+        $this->middleware('module:5');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+        $user = \Auth::user();
+        if($user->project_id != NULL)
+        {
+            $data = MedicalReimbursement::select('medical_reimbursement.*')->orderBy('id', 'DESC')->join('users','users.id','=','medical_reimbursement.user_id')->where('users.project_id', $user->project_id);
+            $params['division'] = OrganisasiDivision::where('project_id', $user->project_id)->select('organisasi_division.*')->get();
+            $params['position'] = OrganisasiPosition::where('project_id', $user->project_id)->select('organisasi_position.*')->get();
+        } else
+        {
+            $data = MedicalReimbursement::select('medical_reimbursement.*')->orderBy('id', 'DESC')->join('users','users.id','=','medical_reimbursement.user_id');
+            $params['division'] = OrganisasiDivision::all();
+            $params['position'] = OrganisasiPosition::all();
+        }
+
+        $params['structure'] = getStructureName();
+
+        $data = $data->where('medical_reimbursement.status', '!=', 5);
+
+        if(count(request()->all())) {
+            \Session::put('mr-employee_status', request()->employee_status);
+            \Session::put('mr-position_id', request()->position_id);
+            \Session::put('mr-division_id', request()->division_id);
+            \Session::put('mr-name', request()->name);
+        }
+
+        $employee_status    = \Session::get('mr-employee_status');
+        $position_id        = \Session::get('mr-position_id');
+        $division_id        = \Session::get('mr-division_id');
+        $name               = \Session::get('mr-name');
+
+        if(request())
+        {
+            if (!empty($name)) {
+                $data = $data->where(function ($table) use($name) {
+                    $table->where('users.name', 'LIKE', '%' . $name . '%')
+                        ->orWhere('users.nik', 'LIKE', '%' . $name . '%')
+                        ->orWhere('number', 'LIKE', '%' . $name . '%');
+                });
+            }
+            
+            if(!empty($employee_status))
+            {
+                $data = $data->where('users.organisasi_status', $employee_status);
+            }
+
+            if((!empty($division_id)) and (empty($position_id))) 
+            {   
+                $data = $data->join('structure_organization_custom','users.structure_organization_custom_id','=','structure_organization_custom.id')->where('structure_organization_custom.organisasi_division_id',$division_id);
+            }
+            if((!empty($position_id)) and (empty($division_id)))
+            {   
+                $data = $data->join('structure_organization_custom','users.structure_organization_custom_id','=','structure_organization_custom.id')->where('structure_organization_custom.organisasi_position_id',$position_id);
+            }
+            if((!empty($position_id)) and (!empty($division_id)))
+            {
+                $data = $data->join('structure_organization_custom','users.structure_organization_custom_id','=','structure_organization_custom.id')->where('structure_organization_custom.organisasi_position_id',$position_id)->where('structure_organization_custom.organisasi_division_id',$division_id);
+            }
+
+            if(request()->action == 'download')
+            {
+                return $this->downloadExcel($data->get());
+            }
+        }
+
+        if(request()->reset == 1)
+        {
+            \Session::forget('mr-employee_status');
+            \Session::forget('mr-position_id');
+            \Session::forget('mr-division_id');
+            \Session::forget('mr-name');
+
+            return redirect()->route('administrator.medicalcustom.index');
+        }
+
+        $params['data'] = $data->get();
+
+
+        return view('administrator.medicalcustom.index')->with($params);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    public function proses($id)
+    {   
+        $test = MedicalReimbursement::where('id', $id)->first();
+        $userPos = $test->user->structure->organisasi_position_id;
+        $plafond = MedicalPlafond::where('position_id',$userPos);
+        
+        $params['data'] = MedicalReimbursement::where('id', $id)->first();
+        $params['form'] = MedicalReimbursementForm::where('medical_reimbursement_id', $id)->get();
+        return view('administrator.medicalcustom.edit')->with($params);
+    }
+
+    public function downloadExcel($data)
+    {
+        $params = [];
+
+        $total_loop_header = [];
+        foreach($data as $no =>  $item)
+        {
+            $total = 0;
+            foreach($item->form as $type => $form)
+            {
+                $total++;
+            }
+            $total_loop_header[] = $total;
+        }
+
+        foreach($data as $no =>  $item)
+        {
+            $params[$no]['NO']               = $no+1;
+            $params[$no]['EMPLOYEE ID(NIK)']              = $item->user->nik;
+            $params[$no]['EMPLOYEE NAME']    = $item->user->name;
+            $params[$no]['POSITION']         = (isset($item->structure->position) ? $item->structure->position->name:'').(isset($item->structure->division) ? ' - '.$item->structure->division->name:'').(isset($item->structure->title) ? ' - '.$item->structure->title->name:'');
+            $params[$no]['DATE OF SUBMITTED']    = date('d F Y', strtotime($item->tanggal_pengajuan));
+
+            $total=0;
+            $total_klaim    = 0;
+            $total_approve  = 0;
+            foreach($item->form as $type => $form)
+            {   
+                $type = $type+1;
+                $params[$no]['RECEIPT DATE '.$type]     = $form->tanggal_kwitansi;
+                if('0' == $form->user_family_id)
+                {
+                    $hubungan = 'My Self';
+                }
+                else
+                {
+
+                    $hubungan = $form->UserFamily?$form->UserFamily->hubungan:"";
+                }
+
+                $params[$no]['RELATIONSHIP '.$type]         = $hubungan;
+
+                if('0' == $form->user_family_id)
+                {
+                    $nama_pasien =  isset($form->medical->user) ? $form->medical->user->name : '';
+                }
+                else
+                {
+                    $nama_pasien = isset($form->UserFamily->nama) ? $form->UserFamily->nama : '';
+                }
+
+                $params[$no]['PATIENT NAME '.$type]      = $nama_pasien;
+                $params[$no]['CLAIM TYPE '.$type]        = isset($form->medicalType)? $form->medicalType->name:'' ;
+                $params[$no]['RECEIPT NO/ KWITANSI NO '.$type]    = $form->no_kwitansi;
+                $params[$no]['AMOUNT '.$type]           = $form->jumlah;
+                $total++;       
+                $total_klaim    += $form->jumlah;
+                $total_approve  += $form->nominal_approve;
+            }
+            if($total ==0 ) $total++;
+            for($v=$total; $v < max($total_loop_header); $v++)
+            {
+                $params[$no]['RECEIPT DATE '.($v+1)]    = "-";
+                $params[$no]['RELATIONSHIP '.($v+1)]        = "-";
+                $params[$no]['PATIENT NAME '.($v+1)]     = "-";
+                $params[$no]['CLAIM TYPE '.($v+1)]     = "-";
+                $params[$no]['RECEIPT NO/ KWITANSI NO '.($v+1)]    = "-";
+                $params[$no]['AMOUNT '.($v+1)]          = "-";
+            }
+            $params[$no]['TOTAL CLAIM']      = $total_klaim;
+            $params[$no]['TOTAL APPROVED']= $total_approve;
+
+            // SET HEADER LEVEL APPROVAL
+            $level_header = get_medical_header();
+            for($a=0; $a < $level_header  ; $a++)
+            {
+                $params[$no]['APPROVAL STATUS '. ($a+1)]           = '-';
+                $params[$no]['APPROVAL NAME '. ($a+1)]           = '-';
+                $params[$no]['APPROVAL DATE '. ($a+1)]           = '-';
+
+            }
+            foreach ($item->historyApproval as $key => $value) {
+                if($value->is_approved == 1)
+                {
+                    $params[$no]['APPROVAL STATUS '. ($key+1)]           = 'Approved';
+                }elseif($value->is_approved == 0)
+                {
+                    $params[$no]['APPROVAL STATUS '. ($key+1)]           = 'Rejected';
+                }else
+                {
+                    $params[$no]['APPROVAL STATUS '. ($key+1)]           = '-';
+                }
+
+                $params[$no]['APPROVAL NAME '. ($key+1)]           = isset($value->userApproved) ? $value->userApproved->name:'';
+
+                $params[$no]['APPROVAL DATE '. ($key+1)]           = $value->date_approved != NULL ? date('d F Y', strtotime($value->date_approved)) : ''; 
+            } 
+            
+        }
+
+        return (new \App\Models\KaryawanExport($params, 'Report Medical Employee'))->download('EM-HR.Report-Medical-'.date('d-m-Y') .'.xlsx');
+    }
+
+}

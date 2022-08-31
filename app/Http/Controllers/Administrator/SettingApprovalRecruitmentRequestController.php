@@ -1,0 +1,274 @@
+<?php
+
+namespace App\Http\Controllers\Administrator;
+
+use App\Models\SettingApproval;
+use App\Http\Controllers\Controller;
+use App\Models\SettingApprovalRecruitmentItem;
+use App\Models\SettingApprovalLevel;
+use App\Models\StructureOrganizationCustom;
+use Illuminate\Http\Request;
+
+class SettingApprovalRecruitmentRequestController extends Controller
+{
+    //
+    public function __construct()
+    {
+        parent::__construct();
+        $this->middleware('auth');
+        $this->middleware('module:27');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+        $user = \Auth::user();
+        if($user->project_id != NULL)
+        {
+            $params['data']  = SettingApproval::orderBy('setting_approval.id', 'DESC')->join('structure_organization_custom','structure_organization_custom.id','=','setting_approval.structure_organization_custom_id')->join('users','users.id','=','structure_organization_custom.user_created')->where('users.project_id', $user->project_id)->select('setting_approval.*')->get();
+        }else{
+            $params['data']  = SettingApproval::orderBy('id', 'DESC')->get();
+        }
+        return view('administrator.setting-approvalRecruitment.index')->with($params);
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        $params['structure'] = StructureOrganizationCustom::all();
+        return view('administrator.setting-approvalRecruitment.create')->with($params);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        $data       = new SettingApproval();
+        $data->structure_organization_custom_id  = $request->structure_organization_custom_id;
+        $data->description = $request->description;
+        $data->save();
+
+        return redirect()->route('administrator.setting-approvalRecruitment.index')->with('message-success', 'Data successfully saved!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+        $params['data']         = SettingApproval::where('id', $id)->first();
+        $params['structure']    = StructureOrganizationCustom::all();
+
+        return view('administrator.setting-approvalRecruitment.edit')->with($params);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+        $data                       = SettingApproval::where('id', $id)->first();
+        $data->structure_organization_custom_id = $request->structure_organization_custom_id;
+        $data->description     = $request->description;
+        $data->save();
+
+        return redirect()->route('administrator.setting-approvalRecruitment.index')->with('message-success', 'Data successfully saved');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+        $data = SettingApproval::where('id', $id)->first();
+        $data->delete();
+
+        return redirect()->route('administrator.setting-approvalRecruitment.index')->with('message-success', 'Data successfully deleted');
+    }
+
+    public function indexItem($id)
+    {
+        //
+        $params['data'] = SettingApproval::where('id', $id)->first();
+        $params['dataItem'] = SettingApprovalRecruitmentItem::where('setting_approval_id', $id)->orderBy('setting_approval_level_id')->get();
+        if(!$params['data']){
+            return redirect()->route('administrator.setting-approvalRecruitment.index')->with('message-error', 'Data not found!');
+        }
+        return view('administrator.setting-approvalRecruitment.indexItem')->with($params);
+    }
+
+    public function createItem($id)
+    {
+        $params['data'] = SettingApproval::where('id', $id)->first();
+        $params['structure'] = getStructureName();
+        $params['level'] = SettingApprovalLevel::all();
+
+        return view('administrator.setting-approvalRecruitment.createItem')->with($params);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeItem(Request $request)
+    {
+        //
+        //cek data udah ada belum level segitu
+        if ($request->structure_organization_custom_id == NULL) {
+            # code...
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors("Approval position is incomplete!");
+//            return redirect()->route('administrator.setting-approvalRecruitment.indexItem', $request->setting_approval_id)->with('message-error', 'Approval position is incomplete!');
+        }
+        else if ($request->setting_approval_level_id == NULL) {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors("Approval level is incomplete!");
+//            return redirect()->route('administrator.setting-approvalRecruitment.indexItem', $request->setting_approval_id)->with('message-error', 'Approval position is incomplete!');
+        }
+        else
+        {
+            $checkdata         = SettingApprovalRecruitmentItem::where('setting_approval_id', $request->setting_approval_id)->where('setting_approval_level_id', $request->setting_approval_level_id)->first();
+            $checkDataStruktur = SettingApprovalRecruitmentItem::where('setting_approval_id', $request->setting_approval_id)->where('structure_organization_custom_id', $request->structure_organization_custom_id)->first();
+            if(isset($checkDataStruktur) || isset($checkdata))
+            {
+                return redirect()
+                    ->back()
+                    ->withInput()
+                    ->withErrors("Data already exists!");
+            }else
+            {
+                $data       = new SettingApprovalRecruitmentItem();
+                $data->setting_approval_id  = $request->setting_approval_id;
+                $data->setting_approval_level_id  = $request->setting_approval_level_id;
+                $data->structure_organization_custom_id  = $request->structure_organization_custom_id;
+                $data->description = $request->description;
+                $data->save();
+                return redirect()->route('administrator.setting-approvalRecruitment.indexItem', $request->setting_approval_id)->with('message-success', 'Data successfully saved!');
+            }
+        }
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editItem($id)
+    {
+        //
+        $params['data'] = SettingApprovalRecruitmentItem::where('id', $id)->first();
+        $params['structure'] = getStructureName();
+        $params['level'] = SettingApprovalLevel::all();
+        if(!$params['data']){
+            return redirect()->route('administrator.setting-approvalRecruitment.index')->with('message-error', 'Data not found!');
+        }
+
+        return view('administrator.setting-approvalRecruitment.editItem')->with($params);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateItem(Request $request, $id)
+    {
+        // check data
+
+        $data                       = SettingApprovalRecruitmentItem::where('id', $id)->first();
+        $checkdata = SettingApprovalRecruitmentItem::where('setting_approval_id', $request->setting_approval_id)->where('setting_approval_level_id', $request->setting_approval_level_id)->where('id','!=',$id)->first();
+        $checkDataStruktur = SettingApprovalRecruitmentItem::where('setting_approval_id', $request->setting_approval_id)->where('structure_organization_custom_id', $request->structure_organization_custom_id)->where('id','!=',$id)->first();
+
+        if($checkdata){
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors("Approval level $request->setting_approval_level_id has already existed!");
+        }
+        if ($request->structure_organization_custom_id == NULL) {
+            # code...
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors("Approval level is incomplete!");
+        }else{
+            if(isset($checkDataStruktur)) {
+                return redirect()
+                    ->back()
+                    ->withInput()
+                    ->withErrors("Data already exists!");
+            }else
+            {
+                $data->setting_approval_level_id  = $request->setting_approval_level_id;
+                $data->structure_organization_custom_id  = $request->structure_organization_custom_id;
+                $data->description     = $request->description;
+                $data->save();
+
+                return redirect()->route('administrator.setting-approvalRecruitment.indexItem', $data->setting_approval_id)->with('message-success', 'Data successfully saved');
+            }
+        }
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyItem($id)
+    {
+        //
+        $data = SettingApprovalRecruitmentItem::where('id', $id)->first();
+        $id = $data->setting_approval_id;
+        $data->delete();
+
+        return redirect()->route('administrator.setting-approvalRecruitment.indexItem',$id)->with('message-success', 'Data successfully deleted');
+    }
+}

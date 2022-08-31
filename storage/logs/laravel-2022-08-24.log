@@ -1,0 +1,1085 @@
+[2022-08-24 08:21:59] local.ERROR: Attempt to read property "position" on null {"exception":"[object] (ErrorException(code: 0): Attempt to read property \"position\" on null at /var/www/test.em-hr.co.id/app/Http/Controllers/Api/RecruitmentController.php:50)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/app/Http/Controllers/Api/RecruitmentController.php(50): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Attempt to read...', '/var/www/test.e...', 50)
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): App\\Http\\Controllers\\Api\\RecruitmentController->jobVacancyList(Object(Illuminate\\Http\\Request))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('jobVacancyList', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Route.php(262): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Api\\RecruitmentController), 'jobVacancyList')
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Route.php(205): Illuminate\\Routing\\Route->runController()
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Router.php(721): Illuminate\\Routing\\Route->run()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 /var/www/test.em-hr.co.id/app/Http/Middleware/ConnectionMiddleware.php(34): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\\Http\\Middleware\\ConnectionMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 /var/www/test.em-hr.co.id/app/Http/Middleware/Cors.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php(63): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), '60', '1')
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Router.php(723): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Router.php(698): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Router.php(662): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Routing/Router.php(651): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(167): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(128): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /var/www/test.em-hr.co.id/vendor/fideloper/proxy/src/TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(86): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(167): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(103): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(142): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 /var/www/test.em-hr.co.id/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 {main}
+"} 
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 08:27:17] local.INFO: []  
+[2022-08-24 11:38:55] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 11:56:37] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 14:34:20] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 14:35:47] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 14:36:11] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 14:37:04] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 16:22:31] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 16:51:13] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 16:52:16] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 16:55:27] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 16:58:10] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMjYyNTgzLCJleHAiOjE2NjE4NjczODMsIm5iZiI6MTY2MTI2MjU4MywianRpIjoibHV5UkV0eTRNRjFxNTJ4RyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.ODXj2YsCy-ByNCtR84WIfBMtUXYD3lGZYg-7Ij4OMC8  
+[2022-08-24 19:24:01] local.ERROR: SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled (SQL: DROP EVENT IF EXISTS `Event Payroll Daily`; CREATE DEFINER=`root`@`localhost` EVENT IF NOT EXISTS `Event Payroll Daily` ON SCHEDULE EVERY 1 DAY STARTS '2020-04-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+UPDATE payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+SET ph.is_lock = 1
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+INSERT INTO emhr.event_log (`database`, `type`, `user_id`, `transaction_id`, `description`, `date`)
+SELECT Database(), 'Payroll', u.id, ph.id, 'Success Payroll', Now()
+FROM payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+END) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled (SQL: DROP EVENT IF EXISTS `Event Payroll Daily`; CREATE DEFINER=`root`@`localhost` EVENT IF NOT EXISTS `Event Payroll Daily` ON SCHEDULE EVERY 1 DAY STARTS '2020-04-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+UPDATE payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+SET ph.is_lock = 1
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+INSERT INTO emhr.event_log (`database`, `type`, `user_id`, `transaction_id`, `description`, `date`)
+SELECT Database(), 'Payroll', u.id, ph.id, 'Success Payroll', Now()
+FROM payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+END) at /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#4 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#7 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#20 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDO\\Exception(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(60): Doctrine\\DBAL\\Driver\\PDO\\Exception::new(Object(PDOException))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(550): Doctrine\\DBAL\\Driver\\PDOConnection->exec('DROP EVENT IF E...')
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('DROP EVENT IF E...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#7 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:55)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(55): PDO->exec('DROP EVENT IF E...')
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(550): Doctrine\\DBAL\\Driver\\PDOConnection->exec('DROP EVENT IF E...')
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('DROP EVENT IF E...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#7 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2022-08-24 19:24:02] local.ERROR: SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement (SQL: SET GLOBAL event_scheduler = OFF) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement (SQL: SET GLOBAL event_scheduler = OFF) at /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#4 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#20 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDO\\Exception(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(119): Doctrine\\DBAL\\Driver\\PDO\\Exception::new(Object(PDOException))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): Doctrine\\DBAL\\Driver\\PDOStatement->execute()
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('SET GLOBAL even...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#7 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:117)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(117): PDOStatement->execute(NULL)
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): Doctrine\\DBAL\\Driver\\PDOStatement->execute()
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('SET GLOBAL even...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#7 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2022-08-24 19:35:55] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 19:38:20] local.ERROR: SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled (SQL: DROP EVENT IF EXISTS `Event Payroll Daily`; CREATE DEFINER=`root`@`localhost` EVENT IF NOT EXISTS `Event Payroll Daily` ON SCHEDULE EVERY 1 DAY STARTS '2020-04-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+UPDATE payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+SET ph.is_lock = 1
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+INSERT INTO emhr.event_log (`database`, `type`, `user_id`, `transaction_id`, `description`, `date`)
+SELECT Database(), 'Payroll', u.id, ph.id, 'Success Payroll', Now()
+FROM payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+END) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled (SQL: DROP EVENT IF EXISTS `Event Payroll Daily`; CREATE DEFINER=`root`@`localhost` EVENT IF NOT EXISTS `Event Payroll Daily` ON SCHEDULE EVERY 1 DAY STARTS '2020-04-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+UPDATE payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+SET ph.is_lock = 1
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+INSERT INTO emhr.event_log (`database`, `type`, `user_id`, `transaction_id`, `description`, `date`)
+SELECT Database(), 'Payroll', u.id, ph.id, 'Success Payroll', Now()
+FROM payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+END) at /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#4 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#7 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#20 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDO\\Exception(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(60): Doctrine\\DBAL\\Driver\\PDO\\Exception::new(Object(PDOException))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(550): Doctrine\\DBAL\\Driver\\PDOConnection->exec('DROP EVENT IF E...')
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('DROP EVENT IF E...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#7 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:55)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(55): PDO->exec('DROP EVENT IF E...')
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(550): Doctrine\\DBAL\\Driver\\PDOConnection->exec('DROP EVENT IF E...')
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('DROP EVENT IF E...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#7 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2022-08-24 19:38:20] local.ERROR: SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement (SQL: SET GLOBAL event_scheduler = OFF) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement (SQL: SET GLOBAL event_scheduler = OFF) at /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#4 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#20 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDO\\Exception(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(119): Doctrine\\DBAL\\Driver\\PDO\\Exception::new(Object(PDOException))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): Doctrine\\DBAL\\Driver\\PDOStatement->execute()
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('SET GLOBAL even...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#7 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:117)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(117): PDOStatement->execute(NULL)
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): Doctrine\\DBAL\\Driver\\PDOStatement->execute()
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('SET GLOBAL even...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#7 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2022-08-24 19:40:53] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 19:41:14] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 19:41:28] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 19:41:40] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 19:41:43] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 19:42:09] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 19:42:19] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 19:45:21] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYwOTAwMjQyLCJleHAiOjE2NjE1MDUwNDIsIm5iZiI6MTY2MDkwMDI0MiwianRpIjoiRXh1VFBqaWlESUwwZng4eiIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.33C8nPlk664z8gI1KscsTCm3gMyj0Ya2qR9hYOG3WEA  
+[2022-08-24 19:46:56] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1MjEyLCJleHAiOjE2NjE5NTAwMTIsIm5iZiI6MTY2MTM0NTIxMiwianRpIjoiOEsxSjBjdmc3TTdGVDA3MSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.NvQIvI40hl5CJLsMlwnNke2p09iOkTkVIWlV8Q975IY  
+[2022-08-24 19:49:13] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1MjEyLCJleHAiOjE2NjE5NTAwMTIsIm5iZiI6MTY2MTM0NTIxMiwianRpIjoiOEsxSjBjdmc3TTdGVDA3MSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.NvQIvI40hl5CJLsMlwnNke2p09iOkTkVIWlV8Q975IY  
+[2022-08-24 19:49:33] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1MjEyLCJleHAiOjE2NjE5NTAwMTIsIm5iZiI6MTY2MTM0NTIxMiwianRpIjoiOEsxSjBjdmc3TTdGVDA3MSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.NvQIvI40hl5CJLsMlwnNke2p09iOkTkVIWlV8Q975IY  
+[2022-08-24 19:51:00] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1MjEyLCJleHAiOjE2NjE5NTAwMTIsIm5iZiI6MTY2MTM0NTIxMiwianRpIjoiOEsxSjBjdmc3TTdGVDA3MSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.NvQIvI40hl5CJLsMlwnNke2p09iOkTkVIWlV8Q975IY  
+[2022-08-24 19:51:15] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1MjEyLCJleHAiOjE2NjE5NTAwMTIsIm5iZiI6MTY2MTM0NTIxMiwianRpIjoiOEsxSjBjdmc3TTdGVDA3MSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.NvQIvI40hl5CJLsMlwnNke2p09iOkTkVIWlV8Q975IY  
+[2022-08-24 19:51:21] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1MjEyLCJleHAiOjE2NjE5NTAwMTIsIm5iZiI6MTY2MTM0NTIxMiwianRpIjoiOEsxSjBjdmc3TTdGVDA3MSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.NvQIvI40hl5CJLsMlwnNke2p09iOkTkVIWlV8Q975IY  
+[2022-08-24 19:52:05] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1NTE4LCJleHAiOjE2NjE5NTAzMTgsIm5iZiI6MTY2MTM0NTUxOCwianRpIjoiT3VnOFIzbFN6c2lEZDU4cCIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.X_Bbors3uHQPogSYfsduiJ0VzHc8GzrhYhcb7jDvY8Q  
+[2022-08-24 19:53:21] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1NTE4LCJleHAiOjE2NjE5NTAzMTgsIm5iZiI6MTY2MTM0NTUxOCwianRpIjoiT3VnOFIzbFN6c2lEZDU4cCIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.X_Bbors3uHQPogSYfsduiJ0VzHc8GzrhYhcb7jDvY8Q  
+[2022-08-24 20:05:26] local.ERROR: SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled (SQL: DROP EVENT IF EXISTS `Event Payroll Daily`; CREATE DEFINER=`root`@`localhost` EVENT IF NOT EXISTS `Event Payroll Daily` ON SCHEDULE EVERY 1 DAY STARTS '2020-04-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+UPDATE payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+SET ph.is_lock = 1
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+INSERT INTO emhr.event_log (`database`, `type`, `user_id`, `transaction_id`, `description`, `date`)
+SELECT Database(), 'Payroll', u.id, ph.id, 'Success Payroll', Now()
+FROM payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+END) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled (SQL: DROP EVENT IF EXISTS `Event Payroll Daily`; CREATE DEFINER=`root`@`localhost` EVENT IF NOT EXISTS `Event Payroll Daily` ON SCHEDULE EVERY 1 DAY STARTS '2020-04-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+UPDATE payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+SET ph.is_lock = 1
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+INSERT INTO emhr.event_log (`database`, `type`, `user_id`, `transaction_id`, `description`, `date`)
+SELECT Database(), 'Payroll', u.id, ph.id, 'Success Payroll', Now()
+FROM payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+END) at /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#4 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#7 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#20 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDO\\Exception(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(60): Doctrine\\DBAL\\Driver\\PDO\\Exception::new(Object(PDOException))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(550): Doctrine\\DBAL\\Driver\\PDOConnection->exec('DROP EVENT IF E...')
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('DROP EVENT IF E...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#7 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:55)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(55): PDO->exec('DROP EVENT IF E...')
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(550): Doctrine\\DBAL\\Driver\\PDOConnection->exec('DROP EVENT IF E...')
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('DROP EVENT IF E...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#7 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2022-08-24 20:05:27] local.ERROR: SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement (SQL: SET GLOBAL event_scheduler = OFF) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement (SQL: SET GLOBAL event_scheduler = OFF) at /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#4 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#20 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDO\\Exception(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(119): Doctrine\\DBAL\\Driver\\PDO\\Exception::new(Object(PDOException))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): Doctrine\\DBAL\\Driver\\PDOStatement->execute()
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('SET GLOBAL even...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#7 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:117)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(117): PDOStatement->execute(NULL)
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): Doctrine\\DBAL\\Driver\\PDOStatement->execute()
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('SET GLOBAL even...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#7 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2022-08-24 20:26:13] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1NTE4LCJleHAiOjE2NjE5NTAzMTgsIm5iZiI6MTY2MTM0NTUxOCwianRpIjoiT3VnOFIzbFN6c2lEZDU4cCIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.X_Bbors3uHQPogSYfsduiJ0VzHc8GzrhYhcb7jDvY8Q  
+[2022-08-24 20:27:07] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ1NTE4LCJleHAiOjE2NjE5NTAzMTgsIm5iZiI6MTY2MTM0NTUxOCwianRpIjoiT3VnOFIzbFN6c2lEZDU4cCIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.X_Bbors3uHQPogSYfsduiJ0VzHc8GzrhYhcb7jDvY8Q  
+[2022-08-24 20:29:31] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ0NTUzLCJleHAiOjE2NjE5NDkzNTMsIm5iZiI6MTY2MTM0NDU1MywianRpIjoiT3lvQ25jS0xwRXBlc1d2ZSIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.o_ZiIr8zRUiDcAjzZqRW8qFOjEsWeBRKwikbT8QTM5E  
+[2022-08-24 20:29:56] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ3Nzk1LCJleHAiOjE2NjE5NTI1OTUsIm5iZiI6MTY2MTM0Nzc5NSwianRpIjoianltdG9SVFByQktlTVQxRyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.MSND30ggse0eO23FTBFYKoSraV-Zq8_YnyWHWnSbtos  
+[2022-08-24 20:30:50] local.INFO: Validate by eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVzdC5lbS1oci5jby5pZFwvYXBpXC9tb2JpbGVcL2xvZ2luIiwiaWF0IjoxNjYxMzQ3Nzk1LCJleHAiOjE2NjE5NTI1OTUsIm5iZiI6MTY2MTM0Nzc5NSwianRpIjoianltdG9SVFByQktlTVQxRyIsInN1YiI6MywicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.MSND30ggse0eO23FTBFYKoSraV-Zq8_YnyWHWnSbtos  
+[2022-08-24 23:33:48] local.ERROR: SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled (SQL: DROP EVENT IF EXISTS `Event Payroll Daily`; CREATE DEFINER=`root`@`localhost` EVENT IF NOT EXISTS `Event Payroll Daily` ON SCHEDULE EVERY 1 DAY STARTS '2020-04-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+UPDATE payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+SET ph.is_lock = 1
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+INSERT INTO emhr.event_log (`database`, `type`, `user_id`, `transaction_id`, `description`, `date`)
+SELECT Database(), 'Payroll', u.id, ph.id, 'Success Payroll', Now()
+FROM payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+END) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled (SQL: DROP EVENT IF EXISTS `Event Payroll Daily`; CREATE DEFINER=`root`@`localhost` EVENT IF NOT EXISTS `Event Payroll Daily` ON SCHEDULE EVERY 1 DAY STARTS '2020-04-01 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+
+UPDATE payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+SET ph.is_lock = 1
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+INSERT INTO emhr.event_log (`database`, `type`, `user_id`, `transaction_id`, `description`, `date`)
+SELECT Database(), 'Payroll', u.id, ph.id, 'Success Payroll', Now()
+FROM payroll_history ph
+INNER JOIN users u ON ph.user_id = u.id
+INNER JOIN setting s ON s.project_id = u.project_id
+INNER JOIN payroll_cycle pc ON pc.project_id = u.project_id
+WHERE STR_TO_DATE(CONCAT(YEAR(ph.created_at), '/', MONTH(ph.created_at), '/', pc.end_date), '%Y/%m/%d') <= DATE_SUB(NOW(), INTERVAL 1 MONTH)
+AND s.key = 'schedule_lock'
+AND s.value = 1
+AND pc.key_name = 'payroll';
+
+END) at /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#4 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#7 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#20 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDO\\Exception(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(60): Doctrine\\DBAL\\Driver\\PDO\\Exception::new(Object(PDOException))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(550): Doctrine\\DBAL\\Driver\\PDOConnection->exec('DROP EVENT IF E...')
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('DROP EVENT IF E...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#7 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1577 Cannot proceed, because event scheduler is disabled at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:55)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(55): PDO->exec('DROP EVENT IF E...')
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(550): Doctrine\\DBAL\\Driver\\PDOConnection->exec('DROP EVENT IF E...')
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('DROP EVENT IF E...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('DROP EVENT IF E...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(554): Illuminate\\Database\\Connection->run('DROP EVENT IF E...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->unprepared('DROP EVENT IF E...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('unprepared', Array)
+#7 /var/www/test.em-hr.co.id/database/migrations/2021_10_11_140140_update_event_payroll_daily_3.php(28): Illuminate\\Support\\Facades\\Facade::__callStatic('unprepared', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): UpdateEventPayrollDaily3->up()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(UpdateEventPayrollDaily3), 'up')
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(UpdateEventPayrollDaily3), 'up')
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('/var/www/test.e...', 3, false)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection('emhr_test1', Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 
+[2022-08-24 23:33:48] local.ERROR: SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement (SQL: SET GLOBAL event_scheduler = OFF) {"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement (SQL: SET GLOBAL event_scheduler = OFF) at /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#4 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#20 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (Doctrine\\DBAL\\Driver\\PDO\\Exception(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDO/Exception.php:18)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(119): Doctrine\\DBAL\\Driver\\PDO\\Exception::new(Object(PDOException))
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): Doctrine\\DBAL\\Driver\\PDOStatement->execute()
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('SET GLOBAL even...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#7 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1290 The MariaDB server is running with the --event-scheduler=DISABLED or --skip-grant-tables option so it cannot execute this statement at /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:117)
+[stacktrace]
+#0 /var/www/test.em-hr.co.id/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php(117): PDOStatement->execute(NULL)
+#1 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): Doctrine\\DBAL\\Driver\\PDOStatement->execute()
+#2 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('SET GLOBAL even...', Array)
+#3 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('SET GLOBAL even...', Array, Object(Closure))
+#4 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run('SET GLOBAL even...', Array, Object(Closure))
+#5 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php(442): Illuminate\\Database\\Connection->statement('SET GLOBAL even...')
+#6 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\DatabaseManager->__call('statement', Array)
+#7 /var/www/test.em-hr.co.id/database/seeders/EventSeeder.php(16): Illuminate\\Support\\Facades\\Facade::__callStatic('statement', Array)
+#8 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\EventSeeder->run()
+#9 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(149): Illuminate\\Container\\Container->call(Array, Array)
+#14 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(66): Illuminate\\Database\\Seeder->__invoke()
+#15 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(157): Illuminate\\Database\\Console\\Seeds\\SeedCommand->Illuminate\\Database\\Console\\Seeds\\{closure}()
+#16 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(67): Illuminate\\Database\\Eloquent\\Model::unguarded(Object(Closure))
+#17 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#18 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#21 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#22 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call(Array)
+#23 /var/www/test.em-hr.co.id/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#25 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(1024): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Seeds\\SeedCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 /var/www/test.em-hr.co.id/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 /var/www/test.em-hr.co.id/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 /var/www/test.em-hr.co.id/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 {main}
+"} 

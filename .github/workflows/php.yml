@@ -1,0 +1,44 @@
+name: Git auto
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Executing server update
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.PRODUCTION_HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PRODUCTION_PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd /var/www/${{ secrets.PRODUCTION_DIRECTORY }}
+          git status
+          git checkout .
+          git clean -f
+          git checkout master
+          git pull
+          composer install --ignore-platform-reqs
+          php artisan config:clear
+          php artisan cache:clear
+          composer dump-autoload
+          php artisan migrate
+          php artisan routine:migrate
+          chown -R apache:apache public
+          chown -R apache:apache storage
+          chmod -R 777 config/database.php
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan view:clear
+          supervisorctl restart all

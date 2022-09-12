@@ -24,21 +24,21 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd /var/www/${{ secrets.PRODUCTION_DIRECTORY }}
-          git status
-          git checkout .
-          git clean -f
-          git checkout master
-          git pull
-          composer install --ignore-platform-reqs
-          php artisan config:clear
-          php artisan cache:clear
-          composer dump-autoload
-          php artisan migrate
-          php artisan routine:migrate
-          chown -R apache:apache public
-          chown -R apache:apache storage
-          chmod -R 777 config/database.php
-          php artisan config:clear
-          php artisan cache:clear
-          php artisan view:clear
-          supervisorctl restart all
+          sudo git status
+          sudo git checkout .
+          sudo git clean -f
+          sudo git checkout master
+          sudo git pull
+          sudo composer install --ignore-platform-reqs
+          sudo php artisan config:clear
+          sudo php artisan cache:clear
+          sudo composer dump-autoload
+          sudo php artisan migrate
+          sudo php artisan routine:migrate
+          sudo chown -R apache:apache public
+          sudo chown -R apache:apache storage
+          sudo chmod -R 777 config/database.php
+          sudo php artisan config:clear
+          sudo php artisan cache:clear
+          sudo php artisan view:clear
+          sudo supervisorctl restart all
